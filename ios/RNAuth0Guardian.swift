@@ -100,7 +100,7 @@ class RNAuth0Guardian: NSObject {
     @objc
     func initialize(_ auth0Domain: NSString,  resolver resolve: RCTPromiseResolveBlock, rejecter reject: RCTPromiseRejectBlock) {
         let domain = auth0Domain as String
-        let bundleID = Bundle.main.bundleIdentifier
+        let bundleID = Bundle.main.bundleIdentifier ?? ""
         if domain.isEmpty {
             reject("DOMAIN_NULL", "Domain is null", nil)
         } else {
